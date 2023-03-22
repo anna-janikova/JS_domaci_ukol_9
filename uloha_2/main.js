@@ -1,13 +1,21 @@
 // tady je místo pro náš program
 
-const car = document.querySelector("#car")
+const user = {
+	email: 'bartolomej.rozumbrada@gmail.com',
+	password: 'vimzenicnevim',
+	name: 'Bartoloměj',
+}
+const form = document.querySelector('form')
 
-document.addEventListener("keydown", (e) => {
-	if (e.code === "39"){
-        car.style.marginLeft = `10px`
-    }
-    if (e.code === "37"){
-        car.style.marginLeft = "0px"
-    }
-})
+const signIn = (event) => {
+	event.preventDefault()
+	const input = document.querySelector('input')
+	const email = input.value
+    const password = input.value
+    if (email = "bartolomej.rozumbrada@gmail.com", password= "vimzenicnevim"){
+	form.textContent = `Přihlášený uživatel:${user.name}.`} else {form.textContent = "Chybné přihlašovací údaje."}
+}
 
+
+
+form.addEventListener('submit', signIn)

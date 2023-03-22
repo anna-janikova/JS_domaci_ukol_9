@@ -1,13 +1,11 @@
 // tady je místo pro náš program
+const formular = document.querySelector('form')
 
-const car = document.querySelector("#car")
+const odebirat = (event) => {
+	event.preventDefault()
+	const input = document.querySelector('input')
+	const email = input.value
+	formular.textContent = `Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${email}.`
+}
 
-document.addEventListener("keydown", (e) => {
-	if (e.code === "39"){
-        car.style.marginLeft = `10px`
-    }
-    if (e.code === "37"){
-        car.style.marginLeft = "0px"
-    }
-})
-
+formular.addEventListener('submit', odebirat)
