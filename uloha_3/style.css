@@ -40,3 +40,7 @@ button {
 input {
 	width: 11em;
 }
+.border,
+.border:focus-visible {
+	border: 4px solid red
+}

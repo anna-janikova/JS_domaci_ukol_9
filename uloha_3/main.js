@@ -9,3 +9,10 @@ const odebirat = (event) => {
 }
 
 formular.addEventListener('submit', odebirat)
+
+document.querySelector("#email").addEventListener("input", () => {
+	const input = document.querySelector("#email")
+	if (input.value === "" || input.value.indexOf("@")===-1) { input.classList.add("border") }
+
+	else input.classList.remove("border")
+})

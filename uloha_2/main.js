@@ -9,13 +9,16 @@ const form = document.querySelector('form')
 
 const signIn = (event) => {
 	event.preventDefault()
-	const input = document.querySelector('input')
-	const email = input.value
-    const password = input.value
-    if (email = "bartolomej.rozumbrada@gmail.com", password= "vimzenicnevim"){
-	form.textContent = `Přihlášený uživatel:${user.name}.`} else {form.textContent = "Chybné přihlašovací údaje."}
+	const formEmail = document.querySelector('#email')
+	const email = formEmail.value
+	const formPassword = document.querySelector('#password')
+	const password = formPassword.value
+	if (email === user.email && password === user.password) {
+		form.textContent = `Přihlášený uživatel: ${user.name}.`
+	} else {
+		document.querySelector("#warning").textContent = "Chybné přihlašovací údaje."
+		formPassword.value = ""
+	}
 }
-
-
 
 form.addEventListener('submit', signIn)
